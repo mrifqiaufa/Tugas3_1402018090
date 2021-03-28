@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <title>3D Kalkulator </title>
+    <script src="myscripts.js"></script>
+  </head>
+  <body id="home">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">3D Kalkulator</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#About Me">3D Kalkulator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang Saya</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Ask">Tanyakan!</a>
+            </li>
+          </ul> 
+        </div>
+      </div>
+    </nav>
+    <!-- akhir navbar -->
+    <!-- Jumbotron -->
+    <section class="jumbotron">
+      <img src="img/p.jpg" alt="3D Kalkulator" width="300" class="rounded-circle img-thumbnail" />
+      <h1 class="display-4">Muhammad Rifqi Aufa</h1>
+      <p class="lead">Tugas 3 </p>
+      <div class="container">
+
+    </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,0L34.3,32C68.6,64,137,128,206,154.7C274.3,181,343,171,411,181.3C480,192,549,224,617,213.3C685.7,203,754,149,823,122.7C891.4,96,960,96,1029,117.3C1097.1,139,1166,181,1234,186.7C1302.9,192,1371,160,1406,144L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+        ></path>
+      </svg>
+    </section>
+    <!-- Akhir jumbotron -->
+
+    <!-- Tabel -->
+    <section id="About Me">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <br>
+            <br>
+            <br>
+            <h2>3D Kalkulator</h2>
+            <br />
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col">
+          <script>
+            var Name;
+            var Hallo;
+            var hariSekarang = new Date();
+            var jam = hariSekarang.getHours();
+
+            Name = window.prompt("Masukin Nama Kamu:");
+            if(jam < 12)
+                Hallo = "Selamat Pagi ";
+            if(jam >= 12){
+                jam = jam - 12;
+
+                if(jam < 6)
+                    Hallo = "Selamat Siang ";
+
+                if(jam < 5)
+                    Hallo = "Selamat Sore "
+                    
+
+                if(jam >= 6)
+                    Hallo = "Selamat Malam ";
+            }
+
+            document.writeln("<h3>Hallo, "+ Hallo+""+Name+"</h2>");
+        </script>
+        
+        <br>
+        <h5>Menghitung Volume dan Luas Permukaan dari Silinder, Kerucut dan Bola.</h5><br>
+    </div>
+</div>
+</div>
+<div class="container">
+  <div class="row text-center">
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                <h6>Silinder</h6><br>
+                  <div class="form-group">
+                      <input type="text" id="jariSilinder" class="form-control" placeholder="Masukan Jari-jari silinder (dalam meter)"><br>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="tinggiSilinder" class="form-control" placeholder="Masukan tinggi silinder (dalam meter)"><br>
+                  </div>
+                  <div class="form-group mb-0">
+                    <button class = "btn_hitung" onclick="permukaanSilinder(), volumeSilinder()">Hitung!</button>
+                    <br>
+                    <br>
+                                    <h4>Hasil Perhitungan</h4>
+                                    <p>Luas Permukaan: <span id="hasilPermukaan_Silinder"></span> m<sup>2</sup></p>
+                                    <p>Volume: <span id="hasilVolume_Silinder"></span> m<sup>3</sup></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                <h6>Kerucut</h6><br>
+                  <div class="form-group">
+                      <input type="text" id="jariKerucut" class="form-control" placeholder="Masukan jari-jari kerucut (dalam meter)"><br>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" id="pelukisKerucut" class="form-control" placeholder="Masukan garis pelukis kerucut (dalam meter)"><br>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" id="tinggiKerucut" class="form-control" placeholder="Masukan tinggi kerucut (dalam meter)"><br>
+                </div>
+
+                  <div class="form-group mb-0">
+                    <button class="btn btn-primary" type="submit" onclick="permukaanKerucut(), volumeKerucut()">Hitung!</button>
+                    <br>
+                    <br>
+                                    <h4>Hasil Perhitungan</h4>
+                                    <p>Luas Permukaan: <span id="hasilPermukaan_Kerucut"></span> m<sup>2</sup></p>
+                                    <p>Volume: <span id="hasilVolume_Kerucut"></span> m<sup>3</sup></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                <h6>bola</h6><br>
+                  <div class="form-group">
+                      <input type="text" id="jariBola" class="form-control" placeholder="Masukan jari-jari bola (dalam meter)"><br>
+                  </div>
+                  <div class="form-group mb-0">
+                    <button class = "btn_hitung" onclick="permukaanBola(), volumeBola()">Hitung!</button>
+                    
+                    <br>
+                    <br>
+                                    <h4>Hasil Perhitungan</h4>
+                                    <p>Luas Permukaan: <span id="hasilPermukaan_Bola"></span> m<sup>2</sup></p>
+                                    <p>Volume: <span id="hasilVolume_Bola"></span> m<sup>3</sup></p>
+                  </div>
+
+                   <!-- Script -->
+    <script>
+      function permukaanSilinder() 
+      {       
+          var r = document.getElementById('jariSilinder').value;
+          var t = document.getElementById('tinggiSilinder').value;
+
+          var hasil = 2*Math.PI*r*r+2*Math.PI*r*t;
+          document.getElementById('hasilPermukaan_Silinder').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeSilinder() 
+      {       
+          var r = document.getElementById('jariSilinder').value;
+          var t = document.getElementById('tinggiSilinder').value;
+
+          var hasil = Math.PI*(r*r)*t;
+          document.getElementById('hasilVolume_Silinder').innerHTML = hasil.toFixed(2);
+      }
+
+      function permukaanKerucut() 
+      {
+          var r = document.getElementById('jariKerucut').value;
+          var pelukis = document.getElementById('pelukisKerucut').value;
+          var t = document.getElementById('tinggiKerucut').value;
+
+          var hasil = Math.PI*r*r+Math.PI*r*pelukis;
+          document.getElementById('hasilPermukaan_Kerucut').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeKerucut() 
+      {
+          var r = document.getElementById('jariKerucut').value;           
+          var t = document.getElementById('tinggiKerucut').value;
+
+          var hasil = (1/3)*Math.PI*(r*r)*t;
+          document.getElementById('hasilVolume_Kerucut').innerHTML = hasil.toFixed(2);
+      }
+
+      function permukaanBola() 
+      {
+          var r = document.getElementById('jariBola').value;
+
+          var hasil = 4*Math.PI*r*r;
+          document.getElementById('hasilPermukaan_Bola').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeBola() 
+      {
+          var r = document.getElementById('jariBola').value;
+
+          var hasil = 4/3*Math.PI*r*r*r;
+          document.getElementById('hasilVolume_Bola').innerHTML = hasil.toFixed(2);
+      }
+  </script>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,160L30,176C60,192,120,224,180,224C240,224,300,192,360,154.7C420,117,480,75,540,101.3C600,128,660,224,720,250.7C780,277,840,235,900,197.3C960,160,1020,128,1080,122.7C1140,117,1200,139,1260,122.7C1320,107,1380,53,1410,26.7L1440,0L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+    </section>
+    <!-- Akhir table -->
+
+    <!-- About me -->
+    <section id="about">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <br>
+            <br>
+            <br>
+            <h2>Tentang Saya</h2>
+          </div>
+        </div>
+        <br>
+            <div class="container">
+              <section id="kerucut">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="demo-image">
+                              <img src="img/kerucut.svg" alt="">
+                          </div>
+                      </div>
+
+                     <!-- about -->
+  <section class="about">
+    <div class="container">
+      <h3>Muhammad Rifqi Aufa</h3>
+      <p><strong>Muhammad Rifqi Aufa saya Mahasiswa Desain dan Pemrograman Web dengan Npm 1402018090
+                 Mengerjakan Tugas 3, yang menurut saya cukup sulit dalam pengerjaannya</p>
+    </div>
+  </section>
+
+                  </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,128L18.5,154.7C36.9,181,74,235,111,234.7C147.7,235,185,181,222,144C258.5,107,295,85,332,106.7C369.2,128,406,192,443,192C480,192,517,128,554,90.7C590.8,53,628,43,665,37.3C701.5,32,738,32,775,26.7C812.3,21,849,11,886,53.3C923.1,96,960,192,997,202.7C1033.8,213,1071,139,1108,117.3C1144.6,96,1182,128,1218,122.7C1255.4,117,1292,75,1329,69.3C1366.2,64,1403,96,1422,112L1440,128L1440,0L1421.5,0C1403.1,0,1366,0,1329,0C1292.3,0,1255,0,1218,0C1181.5,0,1145,0,1108,0C1070.8,0,1034,0,997,0C960,0,923,0,886,0C849.2,0,812,0,775,0C738.5,0,702,0,665,0C627.7,0,591,0,554,0C516.9,0,480,0,443,0C406.2,0,369,0,332,0C295.4,0,258,0,222,0C184.6,0,148,0,111,0C73.8,0,37,0,18,0L0,0Z"></path></svg>
+      </svg>
+    </section>
+    <!-- Akhir about me -->
+    <!-- Ask Me! -->
+    <section id="Ask">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <h2>Tanyakan!</h2>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <form>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Name</label>
+                <input class="form-control" type="text" placeholder="Enter Name">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" type="text" exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <br>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Question</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              <div class="mb-3 form-check">
+              </div>
+              <button type="submit" class="btn btn-primary float-end">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Ask Me! -->
+    <script>
+      function permukaanSilinder() 
+      {       
+          var r = document.getElementById('jariSilinder').value;
+          var t = document.getElementById('tinggiSilinder').value;
+
+          var hasil = 2*Math.PI*r*r+2*Math.PI*r*t;
+          document.getElementById('hasilPermukaan_Silinder').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeSilinder() 
+      {       
+          var r = document.getElementById('jariSilinder').value;
+          var t = document.getElementById('tinggiSilinder').value;
+
+          var hasil = Math.PI*(r*r)*t;
+          document.getElementById('hasilVolume_Silinder').innerHTML = hasil.toFixed(2);
+      }
+
+      function permukaanKerucut() 
+      {
+          var r = document.getElementById('jariKerucut').value;
+          var pelukis = document.getElementById('pelukisKerucut').value;
+          var t = document.getElementById('tinggiKerucut').value;
+
+          var hasil = Math.PI*r*r+Math.PI*r*pelukis;
+          document.getElementById('hasilPermukaan_Kerucut').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeKerucut() 
+      {
+          var r = document.getElementById('jariKerucut').value;           
+          var t = document.getElementById('tinggiKerucut').value;
+
+          var hasil = (1/3)*Math.PI*(r*r)*t;
+          document.getElementById('hasilVolume_Kerucut').innerHTML = hasil.toFixed(2);
+      }
+
+      function permukaanBola() 
+      {
+          var r = document.getElementById('jariBola').value;
+
+          var hasil = 4*Math.PI*r*r;
+          document.getElementById('hasilPermukaan_Bola').innerHTML = hasil.toFixed(2);
+      }
+
+      function volumeBola() 
+      {
+          var r = document.getElementById('jariBola').value;
+
+          var hasil = 4/3*Math.PI*r*r*r;
+          document.getElementById('hasilVolume_Bola').innerHTML = hasil.toFixed(2);
+      }
+  </script>
+    <!-- Footer -->
+    <footer class="footer">
+      <i class="bi bi-facebook"></i><a href="https://web.facebook.com/?_rdc=1&_rdr">Facebook</a>
+      <i class="bi bi-instagram"></i><a href="https://www.instagram.com/mrifqiaufa/">Instagram</a>
+      <i class="bi bi-github"></i><a href="https://github.com/mrifqiaufa?tab=repositories">Github</a>
+      <a href="">Herokuapp</a>
+    </footer>
+    <!-- Akhir Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

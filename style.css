@@ -1,0 +1,43 @@
+body {
+  min-height: 2000px;
+}
+.navbar {
+  background-color: rgb(204, 204, 204);
+}
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #504846 ;
+  text-align: center;
+}
+
+h3 {
+  margin top: 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+#about {
+  background-color: #f3f4f5;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  background-color: rgb(204, 204, 204);
+  text-align: end;
+}
+i {
+  margin: 5px;
+}
+
+.responsive img {
+  max-width: 100%;
+  /*width:100%;*/
+  height: auto;
+}
+
+h6 {
+  text-size-adjust: 5;
+  text-align: center;
+}
